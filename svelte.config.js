@@ -7,6 +7,10 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: static_adapter (), 
+		paths: (process.env.NODE_ENV === 'production' ? {
+			base: '/hex',
+			assets: 'https://angramme.github.io/hex',
+		} : {}),
 	},
 	preprocess: preprocess(),
 };
